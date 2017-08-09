@@ -183,6 +183,10 @@
     [self.store removeUploadWithIdentifier:upload.uploadId];
 }
 
+-(TUSResumableUpload * _Nullable)fetchUpload:(NSString *_Nullable)uploadId {
+    return self.uploads[uploadId];
+}
+
 #pragma mark NSURLSessionDataDelegate methods
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend{
     // Unfortunately we need to use this delegate method to report progress back to the task for it to report it to its callback methods

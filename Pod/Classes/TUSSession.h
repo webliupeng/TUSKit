@@ -69,4 +69,6 @@
  */
 -(NSArray <TUSResumableUpload *> * _Nonnull)resumeAll;
 
+-(TUSResumableUpload * _Nullable)fetchUpload:(NSString *_Nullable)uploadId;
+
 @end
